@@ -1,0 +1,15 @@
+# Test pod to verify that Istio sidecar injection is disabled in amp-uat namespace
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-no-sidecar
+  namespace: amp-uat
+  labels:
+    app: test-no-sidecar
+spec:
+  containers:
+  - name: test-app
+    image: nginx:alpine
+    ports:
+    - containerPort: 80
+  restartPolicy: Never

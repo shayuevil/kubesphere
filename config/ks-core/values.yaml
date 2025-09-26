@@ -446,3 +446,9 @@ ksExtensionRepository:
     repository: kubesphere/ks-extensions-museum
     tag: "latest"
     pullPolicy: IfNotPresent
+
+# AMP UAT namespace configuration
+ampUat:
+  enabled: true
+  workspace: "system-workspace"
+  creator: "system"
