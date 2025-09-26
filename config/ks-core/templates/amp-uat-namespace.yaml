@@ -1,0 +1,14 @@
+{{- if .Values.ampUat.enabled }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: amp-uat
+  labels:
+    istio-injection: disabled
+    kubesphere.io/workspace: {{ .Values.ampUat.workspace | default "system-workspace" }}
+    kubesphere.io/managed: "true"
+  annotations:
+    kubesphere.io/description: "AMP UAT namespace with Istio sidecar injection disabled"
+    kubesphere.io/creator: {{ .Values.ampUat.creator | default "system" }}
+{{- end }}
